@@ -4,10 +4,11 @@ Version: 0.0.0.9000
 Authors@R:
     person(given = "Rob",
            family = "Fryer",
-           role = c("aut"),
-           email = "rob.fryer@marlab.ac.uk")
+           role = c("aut", "cre"),
+           email = "r.fryer@marlab.ac.uk")
 Description: A set of utility functions for modelling.
-License: Lfile LICENSE
+Imports: methods, stats, mgcv, pbapply, gamm4, lme4, Matrix
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

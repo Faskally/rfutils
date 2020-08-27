@@ -22,3 +22,13 @@
 
 
 # 21/12/16 adjust for gamm models
+
+
+# mygamm4 news
+
+# 11/08/19 add call as attribute of model object
+# 10/09/19 mer_only argument to return only the mer object (saves time and space!)
+# 11/09/19 allow calc.derivs to be passed in control argument (saves time)
+
+# 1_4
+# 16/07/20 ensure start, when supplied, is only given to the first stage of the optimisation (glmer)
