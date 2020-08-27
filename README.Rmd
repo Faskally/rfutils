@@ -1,33 +1,34 @@
+---
+output:
+  github_document:
+    html_preview: false
+---
 
 # rfutils
 
 ## to install
 
-``` r
+```r
 remotes::install_github("faskally/rfutils")
 ```
+
 
 ## contributing
 
 After making changes to the code, run:
-
-``` r
+```r
 devtools::document()
 ```
-
 to update help files and the NAMESPACE
 
 then
-
-``` r
+```r
 devtools::check()
 ```
-
 to check for errors, and fix warnings and notes
 
 Finally, the readme can be rebuilt using
-
-``` r
+```r
 rmarkdown::render("README.Rmd")
 ```
 
