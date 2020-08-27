@@ -1,0 +1,14 @@
+Package: rfutils
+Title: Useful Functions For Model Selection
+Version: 0.0.0.9000
+Authors@R:
+    person(given = "Rob",
+           family = "Fryer",
+           role = c("aut"),
+           email = "rob.fryer@marlab.ac.uk")
+Description: A set of utility functions for modelling.
+License: Lfile LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
