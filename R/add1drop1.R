@@ -376,7 +376,7 @@ add1drop1 <- function(
     formula <- paste(c(lhs, x), collapse = " ")
     call$formula <- as.formula(formula)
     fit <- try(eval(call, parent.frame()))
-    error <- class(fit) == "try-error"
+    error <- length(class(fit)) == 1 && class(fit) == "try-error"
     out <- list(formula = formula, error = error)
     out[["logLik"]] <- if (!error) calcLogLik(fit) else NA
     out[[critID]] <- if (!error) criterion(fit) else NA
