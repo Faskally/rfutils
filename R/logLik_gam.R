@@ -1,3 +1,23 @@
+#' logLik_gam
+#'
+#' Log likelihood function for use in model selection of mixed models using gam or bam
+#' Here’s a function for extracting the log likelihood and (harder) the degrees of freedom 
+#' out of a gam or bam model.  The degrees of freedom are the number of fixed effects plus 
+#' the number of variances (not the edf as is usually reported by gam) and assumes the 
+#' models are fitted by ML.
+#' 
+#' The function has been tested with a range of smoothers, but as good check would involve 
+#' fitting models in gam and also in gamm4 and check the df are the same. 
+#'
+#' @param model detail
+#'
+#' @references
+#'
+#' @details
+#'
+#' @export
+
+
 logLik_gam <- function(model) {
   
   stopifnot(
