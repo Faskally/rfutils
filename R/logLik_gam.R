@@ -20,6 +20,10 @@
 
 logLik_gam <- function(model) {
   
+  # calculates maximum likelihood from a gam or bam model 
+  # the tricky part is getting the degrees of freedom right across
+  # different types of smoother  
+  
   stopifnot(
     class(model)[1] %in% c("gam", "bam"),
     model$method == "ML"
@@ -33,13 +37,44 @@ logLik_gam <- function(model) {
   # rank gives total number of 'covariates'
   # df_smooth gives those columns that are not fixed effects
   
+  # tensor smooths have component fx which can have length greater than 1
+  #    will assume either all are fixed or none are fixed 
+  # other standard smooths have component fixed which is length 1
+  
   if (length(model$smooth) == 0) {
     df_smooth <- 0
   } else {
-    df_smooth <- sapply(
-      model$smooth,
-      function(x) if (x$fixed) 0 else sum(x$rank)
-    )
+    
+    df_smooth <- sapply(model$smooth, function(x) {
+      
+      # is the smooth penalised?
+      
+      if ("tensor.smooth" %in% class(x)) {
+        
+        if (any(x$fx) && any(!x$fx)) {
+          stop("not coded yet")
+        }
+        
+        unpenalised <- all(x$fx)
+        
+      } else {
+        
+        if (length(x$fixed) > 1) {
+          stop("not coded yet")
+        }
+        
+        unpenalised <- x$fixed
+        
+      }
+      
+      if (unpenalised) {
+        return(0)
+      } 
+      
+      x$df - x$null.space.dim  
+      
+    })
+    
   }
   
   df_fixed <- model$rank - sum(df_smooth)
