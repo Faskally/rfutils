@@ -26,6 +26,8 @@
 #' @param fitModels  detail
 #' @param retainModels  detail
 #'
+#' @importFrom pbapply pblapply
+#'
 #' @references
 #'
 #'  Malcom et al. 2019. Development of a large-scale juvenile density model to inform the assessment
