@@ -1,15 +1,12 @@
 Package: rfutils
 Title: Useful Functions For Model Selection
-Version: 0.0.0.9000
+Version: 0.0.3
 Authors@R:
-    person(given = "Rob",
-           family = "Fryer",
-           role = c("aut", "cre"),
-           email = "r.fryer@marlab.ac.uk")
+    person("Rob", "Fryer", role = c("aut", "cre"), email = "r.fryer@marlab.ac.uk")
 Description: A set of utility functions for modelling.
 Imports: methods, stats, mgcv, pbapply, gamm4, lme4, Matrix
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
